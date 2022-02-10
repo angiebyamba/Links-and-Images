@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links and Images-Homepage</title>
+
+    <!-- description meta tag -->
+
+    <meta name="description" content="Links and Images website">
+
+
+    <!-- Normalize CSS -->
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+    <style>
+      picture img {
+        width: 100%;
+      }
+  
+      /* this is to limit the size of the SVG. You can also add a width and height to the SVG element, 
+         but once we start CSS, it's easier to use CSS. 
+        
+        If you want to change the color of the SVG using CSS, remove the stroke property from 
+        the SVG declaration */
+
+      header svg {
+        stroke: #916247;
+        width: 40px;
+        height: 40px;
+        }
+
+        main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+
+        article {
+        max-width: 48em; 
+       
+        }
+
+    </style>
+  </head>
+  <body>
+    <header>
+    <!-- Navigation -->
+
+    <nav id="mainNav" class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Home </a>
+        |
+        <a class="navbar-brand" href="https://www.discuvver.com/" target="_blank" title="Discuvver Website">Discuvver
+          cool websites!</a>
+
+        <div id="navbarResponsive" class="collapse navbar-collapse">
+
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class= "nav-link" href="index.html">Home</a>
+            </li> 
+       
+              <li class= "nav-item">
+                <a class= "nav-link" href="about/about.html">About</a>
+              </li>
+
+              <li class="nav-item">
+                <a class= "nav-link" href="form/form.html">Form</a>
+              </li>
+
+          </ul>
+
+
+        </div>
+
+      </div>
+
+      </nav>
+      <svg>
+
+        <use href="#menu-icon" />
+
+      </svg>
+
+        <!-- add an svg??? -->
+
+      <p>Above is an inline SVG. It will probably make its way to a mobile menu
+        later.</p>
+
+    </header>
+
+    <picture>
+      <source srcset="images/1600-pic.jpg" media="(min-width: 901px)">
+      <source srcset="images/900-pic.jpg" media="(min-width: 501px)">
+      <source srcset="images/500-pic.jpg" media="(max-width: 500px)">
+  
+      <img src=" images/900-pic.jpg"
+        alt="2 dogs being dogs, enjoying life">
+    </picture>
+    
+    <main>
+        <h1>Best doggies in the world</h1>
+
+       <article>
+        <h2>How to train your dog</h2>
+      <p>First try to decipher what type of dog you have.
+        It might be hard at first but just take a look at your pup.
+      </p>
+
+      <p>If you can't figure it out, then google your dogs 
+        attributes and see what happens. 
+      </p>
+
+       </article>
+
+      <figure>
+      <img src="images/bed-puppy.jpg" alt="poodle on a comfy bed"
+        loading="lazy">
+      <figcaption>Look at this adorable pupper on a bed!</figcaption>
+    </figure>
+
+      <article>
+      <h2>Dog breed is important</h2>
+      <p>Try using <a
+          href="https://www.thedogkey.com/app-main.html">this website.</a> This will allow you to figure out the dog breed which will in turn allow you to train them better. Knowing the conditions and criteria for each type of dog is often overlooked and not used enough.
+          <em>This is especially good for dog owners who adopted their dogs and refer to them as "mutts" </em></p>
+      </article>
+
+
+    </main>
+
+  </body>
+
+</html>
