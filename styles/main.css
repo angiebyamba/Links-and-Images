@@ -2,6 +2,12 @@ picture img {
   width: 100%;
 }
 
+img {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
 header {
   padding: 0 1rem;
 }
@@ -18,6 +24,10 @@ h3 {
   color: var(--text-color);
   font-family: "EB Garamond", serif;
   line-height: 1;
+}
+
+figure img {
+  width: auto;
 }
 
 /* This is centering the main area */
@@ -124,10 +134,7 @@ a:hover {
 
 .card {
   position: relative;
-  flex-flow: column;
-  display: flex;
   align-items: center;
-  width: 100%;
 }
 .card .overlay {
   color: #fcfcfc;
@@ -138,6 +145,9 @@ a:hover {
   margin: 0;
   opacity: 0;
   transition: opacity 300ms ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card:hover .overlay {
@@ -147,4 +157,24 @@ a:hover {
 /* form styles */
 .form img {
   width: 400px;
+}
+
+/* Loader style */
+
+.loader {
+  border-radius: 50%;
+  width: 8rem;
+  height: 8rem;
+  border: 16px solid rgba(0, 0, 0, 0.4);
+  border-left: 16px solid #e99f9f;
+  animation: load 900ms infinite linear;
+}
+
+@keyframes load {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
