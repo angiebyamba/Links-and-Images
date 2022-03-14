@@ -4,12 +4,12 @@
 
 picture img {
   width: 100%;
+  height: 100vh;
+  object-fit: cover;
 }
 
 img {
   width: 100%;
-  display: block;
-  height: auto;
 }
 
 header {
@@ -53,7 +53,7 @@ figure {
 
 footer {
   background-color: var(--main-color);
-  color: rgb(141, 75, 247);
+  color: #2c3a47;
   font-family: "EB Garamond", serif;
   font-size: 2em;
   margin: 0 auto;
@@ -134,49 +134,41 @@ a:hover {
 /* nav */
 
 nav {
-  margin: 2rem 1.5rem 6rem;
+  display: block;
+  margin: 3rem 1.5rem 3rem;
 }
 
 nav ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   list-style-type: none;
   margin: 0 auto;
   padding: 0;
   max-width: 80rem;
+  list-style-type: none;
+}
+nav li {
+  display: flex;
 }
 
-nav a {
+nav a  {
   display: block;
-  padding: 1rem;
-  font-size: 1.4rem;
-}
-nav a:not([href]) {
-  color: var(--roman-silver);
-}
-
-nav a::after {
-  content: "";
-  display: block;
-  width: calc(100% + 12px);
-  height: 3px;
-  margin-left: -6px;
-  margin-top: 6px;
-  background-color: var(--space-cadet-light);
-  transform: scale(0);
-  transition: transform 200ms ease-in, color 300ms ease-in;
-  transform-origin: right;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  margin: 4px 2px;
+  transition: 0.3s;
+  font-size: 30px;
+  border-radius: 12px;
 }
 
-nav a[href]:hover {
-  color: var(--space-cadet-light);
+nav a:hover {
+  background-color: #fd7272;
+  opacity: 1;
 }
-
-nav a[href]:hover::after {
-  transform: scale(1);
-  transform-origin: left;
-}
-
 /* end nav */
 
 /* card styles */
