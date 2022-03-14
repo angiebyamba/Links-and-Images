@@ -13,17 +13,17 @@ img {
 }
 
 header {
-  padding: 0 1rem;
-  background-color: #CAD3C8;
+  padding: 1rem;
+  background-color: #cad3c8;
 }
 
 body {
-  color: #2C3A47;
+  color: #2c3a47;
   font-family: "Noto Serif", serif;
   line-height: 1.5;
   display: flex;
   flex-direction: column;
-  background-color: floralwhite;
+  background-color: #cad3c8;
 }
 
 h1,
@@ -62,7 +62,6 @@ footer {
 }
 
 footer p {
-  width: 75%;
   text-align: center;
 }
 
@@ -88,6 +87,9 @@ a:hover {
   background-position: 100% 0;
   transition: background-position 0.3s;
   border-radius: 12px;
+  border: 2px solid black;
+  background-color: white;
+  color: black;
 }
 
 /* this is the start of the hero overlay and text */
@@ -115,8 +117,7 @@ a:hover {
 .hero .text-group {
   text-align: center;
   position: absolute;
-
-  color: white;
+  color: #fd7272;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -126,9 +127,8 @@ a:hover {
 .hero h1 {
   font-family: "Noto Serif", serif;
   margin: 0;
-  color: #fff;
+  color: floralwhite;
   font-size: 4em;
-  
 }
 
 /* nav */
@@ -184,7 +184,7 @@ nav a[href]:hover::after {
 .cards {
   display: flex;
   gap: 1rem;
-  margin: 12rem 1.5rem 0 1.5rem;
+  margin: 3rem 1.5rem 0 1.5rem;
 }
 
 .card {
@@ -234,4 +234,45 @@ nav a[href]:hover::after {
   }
 }
 
-/* flexbox styles */
+/* panels and media queries */
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 601px) {
+  .panel {
+    flex-direction: row;
+  }
+
+  .panel .text-wrapper {
+    flex: 1 1 60%;
+  }
+
+  .panel .image-wrapper {
+    flex: 1 1 40%;
+  }
+
+  .panel h2 {
+    margin-top: 4;
+  }
+}
+
+@media (min-width: 901px) {
+  .hero {
+    height: 80vh;
+  }
+  .hero img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .panel .text-wrapper {
+    flex: 1 1 50%;
+  }
+
+  .panel .image-wrapper {
+    flex: 1 1 50%;
+  }
+}
