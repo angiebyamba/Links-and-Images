@@ -10,6 +10,8 @@ picture img {
 
 img {
   width: 100%;
+  height: 400px;
+  object-fit: cover;
 }
 
 header {
@@ -24,6 +26,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #cad3c8;
+  overflow-x: hidden;
 }
 
 h1,
@@ -34,6 +37,9 @@ h3 {
   line-height: 1;
 }
 
+h1 {
+  font-size: 4.5em;
+}
 figure img {
   width: auto;
 }
@@ -49,6 +55,27 @@ main {
 
 figure {
   margin: 4rem 0;
+}
+
+article {
+  margin: 0rem;
+}
+
+.full-width {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+aside {
+  background-color: #fd7272;
+  color: var(--background-color);
+  text-align: center;
+  font-size: 2rem;
 }
 
 footer {
@@ -126,38 +153,52 @@ a:hover {
 
 .hero h1 {
   font-family: "Noto Serif", serif;
-  margin: 0;
   color: floralwhite;
   font-size: 4em;
 }
 
 /* nav */
-
 nav {
-  display: block;
-  margin: 3rem 1.5rem 3rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: none;
+  /* margin: 3rem 1.5rem 3rem; */
+  background-color: #cad3c8;
+  transform: translateX(-100vh);
+  transition: 400ms;
+  padding: 15rem 10rem 0;
 }
+.menu-show nav {
+  transform: translateX(0);
+  display: block;
+}
+
+/* end */
 
 nav ul {
   display: flex;
   justify-content: space-evenly;
+  flex-direction: column;
   list-style-type: none;
   margin: 0 auto;
   padding: 0;
   max-width: 80rem;
-  list-style-type: none;
 }
 nav li {
   display: flex;
 }
 
-nav a  {
-  display: block;
+nav a {
+  display: inline-block;
   text-decoration: none;
   background-color: transparent;
   border: none;
-  color: black;
-  padding: 16px 32px;
+  color: #2c3a47;
+  padding: 1em;
   text-align: center;
   margin: 4px 2px;
   transition: 0.3s;
@@ -165,10 +206,14 @@ nav a  {
   border-radius: 12px;
 }
 
+nav a:not([href]) {
+  color: #2c3a47;
+}
 nav a:hover {
   background-color: #fd7272;
   opacity: 1;
 }
+
 /* end nav */
 
 /* card styles */
@@ -177,11 +222,15 @@ nav a:hover {
   display: flex;
   gap: 1rem;
   margin: 3rem 1.5rem 0 1.5rem;
+  flex-direction: column;
+  margin: 0 1rem;
 }
 
 .card {
   position: relative;
   align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: nowrap;
 }
 .card .overlay {
   color: #fcfcfc;
@@ -200,7 +249,6 @@ nav a:hover {
 .card:hover .overlay {
   opacity: 1;
 }
-
 /* form styles */
 .form img {
   width: 400px;
@@ -226,14 +274,79 @@ nav a:hover {
   }
 }
 
+/* Main Menu */
+.main-menu .menu-icon {
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  width: 60px;
+  height: 60px;
+  background-color: magenta;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* brings the menu icon forward */
+  z-index: 1;
+  /* brings the menu icon forward */
+}
+
+.main-menu svg {
+  stroke: #2c3a47;
+  stroke-width: 4px;
+  stroke-linecap: round;
+  padding: 12px;
+}
+
+.main-menu svg line {
+  stroke-linecap: round;
+  transform-origin: center;
+  transition: transform 200ms ease;
+}
+
+.main-menu svg line:first-child {
+  transform: translateY(8px);
+}
+
+.main-menu svg line:last-child {
+  transform: translateY(-8px);
+}
+
+.menu-show .menu-icon {
+  background-color: #cad3c8;
+}
+.main-menu .menu-show {
+  display: block;
+}
+
+.menu-show svg line {
+  stroke: #fc427b;
+  stroke-width: 5px;
+}
+
+.menu-show svg line:first-child {
+  transform: rotate(135deg);
+}
+
+.menu-show svg line:last-child {
+  transform: rotate(-135deg);
+}
+
+/* Main Menu end */
+
 /* panels and media queries */
+
 .panel {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-@media (min-width: 601px) {
+/* Media Queries */
+
+@media (min-width: 560px) {
   .panel {
     flex-direction: row;
   }
@@ -249,7 +362,59 @@ nav a:hover {
   .panel h2 {
     margin-top: 4;
   }
+  /* card styles  */
+  .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  /* card styles end */
+
+  /* copied nav */
+  nav {
+    display: block;
+    margin: 3rem 1.5rem 3rem;
+    background-color: transparent;
+    position: static;
+    transform: none;
+    padding: 0;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 80rem;
+    flex-direction: row;
+  }
+  nav li {
+    display: flex;
+  }
+
+  nav a {
+    display: block;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    margin: 4px 2px;
+    transition: 0.3s;
+    font-size: 30px;
+    border-radius: 12px;
+  }
+
+  nav a:hover {
+    background-color: #fd7272;
+    opacity: 1;
+  }
+
+  .main-menu .menu-icon {
+    display: none;
+  }
 }
+/* nav */
 
 @media (min-width: 901px) {
   .hero {
@@ -267,4 +432,12 @@ nav a:hover {
   .panel .image-wrapper {
     flex: 1 1 50%;
   }
+
+  /* card styles */
+  .cards {
+    flex-wrap: nowrap;
+    max-width: 1600px;
+    align-self: center;
+  }
+  /* card styles */
 }
