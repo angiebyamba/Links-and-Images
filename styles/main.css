@@ -189,6 +189,7 @@ nav ul {
 }
 nav li {
   display: flex;
+  border-bottom: 2px solid black;
 }
 
 nav a {
@@ -202,15 +203,11 @@ nav a {
   margin: 4px 2px;
   transition: 0.3s;
   font-size: 30px;
-  border-radius: 12px;
+  position: relative;
 }
 
 nav a:not([href]) {
   color: #2c3a47;
-}
-nav a:hover {
-  background-color: #fd7272;
-  opacity: 1;
 }
 
 /* end nav */
@@ -386,8 +383,10 @@ nav a:hover {
     max-width: 80rem;
     flex-direction: row;
   }
+
   nav li {
     display: flex;
+    border: none;
   }
 
   nav a {
@@ -395,7 +394,7 @@ nav a:hover {
     text-decoration: none;
     background-color: transparent;
     border: none;
-    color: black;
+    color: #2c3a47;
     padding: 16px 32px;
     text-align: center;
     margin: 4px 2px;
