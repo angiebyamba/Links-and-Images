@@ -1,37 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Form</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">   
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Noto+Serif&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
 
-  <link rel="stylesheet" href="../styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Noto+Serif&display=swap" rel="stylesheet">
 
-</head>
-<body>
-  <header>
-    <nav>
-      <h2 class="hidden">Main Menu</h2>
-      <ul>
-        <li><a href="../">Home</a></li>
-        <li><a href="../about/about.html">About</a></li>
-        <li><a>Form</a></li>
-      </ul>
-    </nav>
-  </header>
+    <link rel="stylesheet" href="../styles/main.css">
 
-  <h1>Form</h1>
-  
-  <!-- <img src="../images/parcelbox.svg" alt="amazon box's rule the world"> -->
+  </head>
 
-  <div
-     class="loader">
-  </div>
+  <body>
+    <header>
+      <nav>
+        <h2 class="hidden">Main Menu</h2>
+        <ul>
+          <li><a href="../">Home</a></li>
+          <li><a href="../about/about.html">About</a></li>
+          <li><a>Form</a></li>
+        </ul>
+      </nav>
+    </header>
 
-</body>
+    <!-- Java Script -->
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        document.querySelector(".menu-icon").addEventListener("click", () => {
+          document.querySelector(".main-menu").classList.toggle("menu-show");
+        });
+      });
+
+    </script>
+
+    <!-- Java Script -->
+
+    <!-- main menu -->
+    <!-- <div class="main-menu"> -->
+    <div class="menu-icon">
+      <svg viewbox="0 0 60 60" width="60px" height="60px">
+        <line x1="5%" y1="50%" x2="95%" y2="50%" />
+        <line x1="5%" y1="50%" x2="95%" y2="50%" />
+      </svg>
+    </div>
+
+
+    <!-- main menu end -->
+    <h1>Form</h1>
+
+    <!-- <img src="../images/parcelbox.svg" alt="amazon box's rule the world"> -->
+
+    <div class="loader">
+    </div>
+
+  </body>
+
 </html>

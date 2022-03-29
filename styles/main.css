@@ -10,8 +10,8 @@ picture img {
 
 img {
   width: 100%;
-  height: 400px;
   object-fit: cover;
+  display: block;
 }
 
 header {
@@ -170,11 +170,15 @@ nav {
   background-color: #cad3c8;
   transform: translateX(-100vh);
   transition: 400ms;
-  padding: 15rem 10rem 0;
+  /* padding: 15rem 10rem 0; */
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .menu-show nav {
   transform: translateX(0);
-  display: block;
+  /* display: block; */
 }
 
 /* end */
@@ -229,6 +233,12 @@ nav a:not([href]) {
   margin-bottom: 1rem;
   flex-wrap: nowrap;
 }
+
+.card img {
+  height: 100%;
+  aspect-ratio: 1 / 1;
+}
+
 .card .overlay {
   color: #fcfcfc;
   background-color: rgba(0, 0, 0, 0.6);
@@ -286,7 +296,7 @@ nav a:not([href]) {
   justify-content: center;
 
   /* brings the menu icon forward */
-  z-index: 1;
+  z-index: 2;
   /* brings the menu icon forward */
 }
 
@@ -364,6 +374,16 @@ nav a:not([href]) {
     flex-direction: row;
     flex-wrap: wrap;
   }
+
+  .card {
+    flex: 1 1 40%;
+  }
+
+  /* .card img {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+  } */
+
   /* card styles end */
 
   /* copied nav */
@@ -379,7 +399,7 @@ nav a:not([href]) {
   nav ul {
     display: flex;
     justify-content: space-evenly;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     padding: 0;
     max-width: 80rem;
     flex-direction: row;
