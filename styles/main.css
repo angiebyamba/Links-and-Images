@@ -37,7 +37,7 @@ h3 {
 }
 
 h1 {
-  font-size: 4.5em;
+  font-size: 3.6em;
 }
 figure img {
   width: auto;
@@ -381,11 +381,6 @@ nav a:not([href]) {
   .card {
     flex: 1 1 40%;
   }
-
-  /* .card img {
-    height: 100%;
-    aspect-ratio: 1 / 1;
-  } */
 
   /* card styles end */
 
