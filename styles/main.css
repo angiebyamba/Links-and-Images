@@ -69,6 +69,7 @@ article {
   margin-right: -50vw;
   padding: 1rem;
   margin-top: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 aside {
@@ -79,7 +80,6 @@ aside {
 }
 
 footer {
-  background-color: var(--main-color);
   color: #2c3a47;
   font-family: "EB Garamond", serif;
   font-size: 2em;
@@ -350,6 +350,9 @@ nav a:not([href]) {
   flex-direction: column;
   gap: 2rem;
 }
+.panel .image-wrapper {
+  order: -1;
+}
 
 /* Media Queries */
 
@@ -450,6 +453,10 @@ nav a:not([href]) {
 
   .panel .image-wrapper {
     flex: 1 1 50%;
+    order: 0;
+  }
+  .panel .left {
+    order: -1;
   }
 
   /* card styles */
@@ -459,4 +466,213 @@ nav a:not([href]) {
     align-self: center;
   }
   /* card styles */
+}
+
+/* Form Start */
+
+h1 {
+  display: flex;
+  justify-content: center;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  margin: 0 1rem;
+  max-width: 30rem;
+  align-self: center;
+}
+
+form {
+  display: grid;
+}
+
+/* adding spacing below elements  */
+
+form > input,
+textarea,
+fieldset {
+  margin-bottom: 1.5rem;
+}
+
+fieldset {
+  display: grid;
+
+  /* condenses rows into smallest possible row */
+  grid-template-columns: min-content 1fr;
+  grid-column-gap: 0.5rem;
+  grid-row-gap: 0.8rem;
+
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  grid-column: 1 / span 2;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+/* Checkbox CSS */
+:root {
+  --checkbox-size: 28px;
+  --font-color: #343639;
+  --main-color: #fd7272;
+}
+
+legend {
+  line-height: 1.2;
+  grid-column: span 2;
+  margin-bottom: 0.6rem;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+
+  display: grid;
+  align-items: center;
+  justify-content: center;
+
+  width: var(--checkbox-size);
+  height: var(--checkbox-size);
+  border: 2px solid var(--font-color);
+  border-radius: 6px;
+
+  transition: background-color 300ms, border-color 300ms, box-shadow 300ms;
+}
+
+input[type="radio"] {
+  border-radius: 50%;
+}
+
+input[type="checkbox"]:hover,
+input[type="checkbox"]:focus,
+input[type="radio"]:hover,
+input[type="radio"]:focus {
+  border: 2px solid var(--main-color);
+  box-shadow: 0 0 2px var(--main-color);
+  outline: none;
+}
+
+input[type="checkbox"]:checked {
+  border-color: #fff;
+}
+
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+  border-color: var(--main-color);
+}
+
+input[type="checkbox"]:checked:hover,
+input[type="checkbox"]:checked:focus {
+  border: 2px solid var(--font-color);
+  box-shadow: 0 0 3px var(--font-color);
+  outline: none;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--main-color);
+}
+
+input[type="checkbox"]:checked::after,
+input[type="radio"]::after {
+  content: "";
+  display: block;
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+input[type="checkbox"]:checked::after {
+  width: calc(var(--checkbox-size) / 4);
+  height: calc(var(--checkbox-size) / 2);
+  border-right: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+  transform: rotate(38deg);
+  margin-bottom: 2px;
+}
+
+input[type="radio"]::after {
+  width: calc(var(--checkbox-size) - 8px);
+  height: calc(var(--checkbox-size) - 8px);
+  background-color: var(--main-color);
+  border-radius: 50%;
+
+  transform: scale(0);
+  transition: transform 300ms;
+}
+
+input[type="radio"]:checked::after {
+  transform: scale(1);
+}
+
+/* Form Checkbox end */
+
+form > input,
+textarea,
+fieldset,
+button {
+  margin-bottom: 1.5rem;
+}
+
+button {
+  justify-self: center;
+  border: 1px solid #000;
+  color: #000;
+  background-color: transparent;
+  font-size: 0.8rem;
+  padding: 0.3rem 0.5rem;
+  transition: background-color 300ms;
+}
+
+button:hover {
+  background-color: #fd7272;
+  color: #fff;
+  cursor: pointer;
+  border-color: #fd7272;
+}
+
+input:hover,
+input:focus {
+  background-color: #eef1ee;
+}
+
+input:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 2px hotpink;
+  outline: 1px solid limegreen;
+}
+
+@media (min-width: 500px) {
+  form {
+    grid-template-columns: max-content 1fr;
+    grid-column-gap: 0.5rem;
+    grid-row-gap: 1rem;
+    align-items: center;
+  }
+  form > input {
+    margin: 0.5rem 0;
+  }
+
+  form > label {
+    justify-self: end;
+  }
+
+  label[for="haiku"] {
+    justify-self: start;
+  }
+
+  /* moving everything over */
+  fieldset,
+  label[for="haiku"],
+  textarea,
+  button {
+    grid-column-start: 2;
+  }
+  button {
+    justify-self: start;
+  }
 }
