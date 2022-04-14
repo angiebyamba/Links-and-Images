@@ -7,15 +7,17 @@ picture img {
   height: 100vh;
   object-fit: cover;
 }
-
-img {
+video {
+  height: 100%;
   width: 100%;
   object-fit: cover;
   display: block;
 }
 
-header {
-  background-color: #cad3c8;
+img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 body {
@@ -24,7 +26,7 @@ body {
   line-height: 1.5;
   display: flex;
   flex-direction: column;
-  background-color: #cad3c8;
+  background-color: #ffffe5;
   overflow-x: hidden;
 }
 
@@ -130,7 +132,7 @@ a:hover {
 
 .hero {
   position: relative;
-  height: 50%;
+  height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -139,9 +141,12 @@ a:hover {
 
 .hero .overlay {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent 70%);
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
-.hero .text-group {
+/* .hero .text-group {
   text-align: center;
   position: absolute;
   color: #fd7272;
@@ -149,12 +154,16 @@ a:hover {
   align-items: center;
   justify-content: center;
   padding: 3rem;
-}
+} */
 
 .hero h1 {
   font-family: "Noto Serif", serif;
   color: floralwhite;
-  font-size: 4em;
+  /* font size */
+  font-size: clamp(2rem, 1.4136rem + 2.4691vw, 4.5rem);
+  mix-blend-mode: overlay;
+  padding-right: 1rem;
+  margin-bottom: 1rem;
 }
 
 /* nav */
@@ -435,7 +444,7 @@ nav a:not([href]) {
 
 @media (min-width: 901px) {
   .hero {
-    height: 80vh;
+    height: 100vh;
   }
   .hero img {
     height: 100%;

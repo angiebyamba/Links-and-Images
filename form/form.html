@@ -22,7 +22,7 @@
         <ul>
           <li><a href="../">Home</a></li>
           <li><a href="../about/about.html">About</a></li>
-          <li><a>Form</a></li>
+          <li><a>Contact</a></li>
         </ul>
       </nav>
 
@@ -73,56 +73,49 @@ If the required attribute is used, the user must enter a correct value before th
     <label for="phone">Phone number</label>
     <input type="tel" name="phone" id="phone">
 
-    <label for="month">Your favorite month</label>
-    <input type="month" name="month" id="month">
-
     <!-- A fieldset groups related form elements - it is particularly helpful with radio buttons and checkboxes. A fieldset should include a legend to make the form accessible as the legend will be read by a screen reader before it reads the form elements.  -->
     <fieldset>
-      <legend>Which of the following would you guess are ingredients of Vegemite? (Check all that apply)</legend>
+      <legend>What skills on my page stuck out to you? (Check all that apply)</legend>
 
       <!-- To "connect" all checkboxes or radio buttons, the related inputs should all have the same name attribute. You should provide individual value attributes for each input that will be submitted if the input is selected.  
      
 Mulitple checkboxes can be selected. Only one radio button can be selected. -->
-      <input type="checkbox" id="wombat" name="ingredients" value="wombat">
-      <label for="wombat">Wombat</label>
+      <input type="checkbox" id="HTML/CSS" name="ingredients" value="HTML/CSS">
+      <label for="HTML/CSS">HTML/CSS</label>
 
-      <input type="checkbox" id="kiwi-feet" name="ingredients" value="kiwi-feet">
-      <label for="kiwi-feet">Dried kiwi feet</label>
+      <input type="checkbox" id="JavaScript" name="ingredients" value="JavaScript">
+      <label for="JavaScript">JavaScript</label>
 
-      <input type="checkbox" id="eucalyptus" name="ingredients" value="eucalyptus">
-      <label for="eucalyptus">Eucalyptus tincture</label>
+      <input type="checkbox" id="marketing" name="ingredients" value="marketing">
+      <label for="marketing">Marketing</label>
 
-      <input type="checkbox" id="emu" name="ingredients" value="emu">
-      <label for="emu">Emu oil</label>
+      <input type="checkbox" id="photography" name="ingredients" value="photography">
+      <label for="photography">Photography</label>
 
-      <input type="checkbox" id="kanga" name="ingredients" value="kanga-claw">
-      <label for="kanga">Kangaroo claw</label>
+      <input type="checkbox" id="Art" name="ingredients" value="Art">
+      <label for="Art">Art</label>
 
-      <input type="checkbox" id="platy" name="ingredients" value="platypus-liver">
-      <label for="platy">Platypus liver</label>
     </fieldset>
 
     <fieldset>
-      <legend>How would you describe the taste of Vegemite?</legend>
+      <legend>How would you describe your occupation?</legend>
 
-      <input type="radio" name="taste" id="asphalt" value="asphalt">
-      <label for="asphalt">Powdered asphalt</label>
+      <input type="radio" name="taste" id="employer" value="employer">
+      <label for="employer">Employer</label>
 
-      <input type="radio" name="taste" id="tar" value="tar">
-      <label for="tar">Lukewarm tar</label>
+      <input type="radio" name="taste" id="student" value="student">
+      <label for="student">Student</label>
 
-      <input type="radio" name="taste" id="salt" value="salty">
-      <label for="salt">Salty</label>
+      <input type="radio" name="taste" id="Professor" value="Professor">
+      <label for="Professor">Professor</label>
 
-      <input type="radio" name="taste" id="delicious" value="delicious">
-      <label for="delicious">Amazeballs</label>
+      <input type="radio" name="taste" id="other" value="other">
+      <label for="other">Other</label>
     </fieldset>
 
-    <!-- the placeholder attribute appears when no text is present. For accessibilty reasons, don't use a placeholder instead of a label  -->
-    <label for="haiku">Compose a haiku about Vegemite</label>
+    <label for="haiku">Write me a short description of your inquiry!</label>
     <textarea name="haiku" id="haiku" rows="10" placeholder="5/7/5 syllable count"></textarea>
 
-    <!-- You will often see <input type="submit"> instead of <button type="submit">. They are the same functionally, but <button> is newer and more easily styled.    -->
     <button type="submit">Submit Now</button>
 
   </form>
